@@ -11,7 +11,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BiWorld } from "react-icons/bi";
- 
+
 export default function WithAction() {
   const router = useRouter();
   const { navigateTo } = useNavigation();
@@ -52,7 +52,7 @@ export default function WithAction() {
           justifyContent={"space-evenly"}
         >
           <Navbar className=" w-3  flex lg:hidden ">
-            <Box className={cn(locale === "ar" ? "-mr-6" : "-ml-6")}>
+            <Box>
               <Button
                 isIconOnly
                 size="lg"
@@ -70,21 +70,7 @@ export default function WithAction() {
               </Button>
             </Box>
           </Navbar>
-          <HStack spacing={8} className="hidden lg:flex" alignItems={"center"}>
-            <Box>
-              <Button
-                size="sm"
-                isIconOnly
-                variant="flat"
-                color="success"
-                className="mx-1"
-                onClick={switchLang}
-              >
-                <BiWorld />
-                {locale == "en" ? " | En" : " | ع"}
-              </Button>
-            </Box>
-          </HStack>
+
           <HStack spacing={8} className="hidden lg:flex" alignItems={"center"}>
             <Box>
               <Button
