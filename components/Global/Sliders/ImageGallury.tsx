@@ -3,18 +3,15 @@
 import { Tab } from "@headlessui/react";
 
 import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Button,
-  useDisclosure,
- 
+  Modal,
+  ModalBody,
+  ModalContent,
+  useDisclosure
 } from "@nextui-org/react";
 
-import { useLocale } from "next-intl";
 import { cn } from "@/libs/cn";
+import { useLocale } from "next-intl";
 import ImageSwipper from "./ImageSwipper";
 
 interface IProps {
@@ -23,9 +20,9 @@ interface IProps {
   discount?: number | undefined;
 }
 
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
-import InnerImageZoom from "react-inner-image-zoom";
 import Image from "next/legacy/image";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 const ImageGallury = ({ alt, images, discount }: IProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const locale = useLocale();
