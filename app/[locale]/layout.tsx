@@ -51,7 +51,7 @@ export default async function RootLayout({
             <div className=" ">
             <SwipperPage  />
               {children}
-              {/* <ToTop /> */}
+              
             </div>
             <GToast />
             <Footer />

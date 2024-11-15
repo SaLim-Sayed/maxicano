@@ -14,7 +14,7 @@ export default function NextUi({ children }: { children: React.ReactNode }) {
   return (
     <NextUIProvider navigate={router.push}>
       <QueryClientProvider client={queryClient}>
-        {children}{" "}
+        {children}
       </QueryClientProvider>
     </NextUIProvider>
   );
