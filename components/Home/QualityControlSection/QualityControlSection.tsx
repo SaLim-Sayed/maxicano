@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/legacy/image";
 
 import cert1 from "@/public/policy/cert1.png";
 import cert2 from "@/public/policy/cert2.png";
 import cert3 from "@/public/policy/cert3.png";
 import qualityControl from "@/public/policy/quality-control.png";
+import { useTranslations } from "next-intl";
 export default function QualityControlSection() {
+  const t = useTranslations("Globals");
   return (
     <div className="flex flex-col justify-center w-full">
       <div
@@ -27,14 +30,7 @@ export default function QualityControlSection() {
       </div>
 
       <div className="flex flex-col justify-center gap-4 my-4 items-center w-full">
-        <div className="text-justify px-4 w-[90%] lg:w-1/2">
-          The policy of our company depends on the adoption of quality global
-          standards for all products. Our company uses the latest and most
-          prestigious laboratories to examine products, ensuring quality
-          control. In addition to Egyptian certificates, we have obtained
-          international certifications such as ISO 9001:2015, ISO 22000:2005,
-          and BRC (British Retail Consortium).
-        </div>
+        <div className="text-justify px-4 w-[90%] lg:w-1/2">{t("Qos")}</div>
         <div className="flex px-4 w-full md:w-1/2 h-28 justify-between">
           {[cert1, cert2, cert3].map((cert, index) => (
             <Image

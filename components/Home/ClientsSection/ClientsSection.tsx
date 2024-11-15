@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/legacy/image";
 
 import client1 from "@/public/clients/Client-1.png";
@@ -6,14 +7,16 @@ import client3 from "@/public/clients/Client-3.png";
 import client4 from "@/public/clients/Client-4.png";
 import qualityControl from "@/public/policy/quality-control.png";
 import Head from "@/components/Global/Ui/Head";
+import { useTranslations } from "next-intl";
 export default function ClientsSection() {
+  const t = useTranslations("Globals");
   return (
     <div className="flex flex-col justify-center w-full">
-      <Head title="Clients"/>
- 
-        <div className="flex justify-center" >
+      <Head title={t("Clients")} />
+
+      <div className="flex justify-center">
         <div className="flex px-4 w-full md:w-1/2 h-28 items-center  justify-between">
-          {[client1, client2, client3,client4].map((client, index) => (
+          {[client1, client2, client3, client4].map((client, index) => (
             <Image
               key={index}
               src={client}
@@ -23,9 +26,8 @@ export default function ClientsSection() {
               className="h-full w-full"
             />
           ))}
-    
-      </div>
         </div>
+      </div>
     </div>
   );
 }

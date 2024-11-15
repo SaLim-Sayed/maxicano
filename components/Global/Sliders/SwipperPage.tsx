@@ -12,34 +12,32 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Button, Card, CardBody, Image } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 
 // Slide data array
-const slides = [
-  {
-    id: 1,
-    title: "مصنع مكسيكانو",
-    description: "وهي من أهم خطوط الإنتاج الإيطالية والتركية",
-    imageSrc: "/slider/banner1.jpg",
-  },
-  {
-    id: 2,
-    title: "جريش الذرة الصفراء",
-    description:
-      "   · صناعة السناكس · صناعة الكاراتيه والبيليت · صناعة الحلويات",
-
-    imageSrc: "/slider/banner2.jpg",
-  },
-  {
-    id: 3,
-    title: "دقيق الذرة الصفراء",
-    description:
-      "   الخبز - البان كيك والوفل - الحلويات · أكل الأطفال - المقرمشات والسناكس",
-
-    imageSrc: "/slider/banner3.jpg",
-  },
-];
 
 const SwipperPage = () => {
+  const t = useTranslations("Sliders");
+  const slides = [
+    {
+      id: 1,
+      title: t("Maxicano_Factory"),
+      description: t("Maxicano_Factory_Desc"),
+      imageSrc: "/slider/banner1.jpg",
+    },
+    {
+      id: 2,
+      title: t("Corn_Grit"),
+      description: t("Corn_Grit_Desc"),
+      imageSrc: "/slider/banner2.jpg",
+    },
+    {
+      id: 3,
+      title: t("Corn_Flour"),
+      description: t("Corn_Flour_Desc"),
+      imageSrc: "/slider/banner3.jpg",
+    },
+  ];
   return (
     <div className="flex w-full cursor-pointer">
       <Swiper

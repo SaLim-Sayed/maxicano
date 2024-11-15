@@ -14,15 +14,15 @@ interface Props {
   desc?: any;
 }
 export default function Policy({ title, image, desc }: Props) {
-  const t = useTranslations("Policy");
+  const t = useTranslations("About");
   return (
     <Center>
       <div className="mb-8 relative">
-        <Head title={title}  subTitle={"تأسست شركة مكسيكانو عام 2015 كمشروع مشترك بين مجموعة مستثمرين أجانب لهم تاريخ عريق في مجال طحن الذرة واستخراج أفضل أنواع الدقيق والسومولينا والجر"} />
+        <Head title={title} subTitle={t("desc")} />
         <div className="flex flex-col items-end  md:flex-row gap-8 mt-4">
           <ClientHydration LoaderComponent={<Spinner />}>
             <div className="flex w-full md:w-[60%] flex-col gap-3 justify-center items-center">
-              {desc}{" "}
+              {desc}
             </div>
           </ClientHydration>
           <div className="   border-8 border-amber-950 w-64 h-64  rounded-full ">

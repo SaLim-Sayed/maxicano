@@ -21,13 +21,15 @@ import {
 } from "@nextui-org/react";
 import ImageSwipper from "@/components/Global/Sliders/ImageSwipper";
 import { cn } from "@/libs/cn";
+import { useTranslations } from "next-intl";
 
 export default function GallerySection({ isRounded }: { isRounded?: boolean }) {
+  const t=useTranslations("Globals")
   const corn = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <Center>
-      <Head title="  معرض الصور" />
+      <Head title={t("Gallery")}/>
 
       <div
         className={cn(
