@@ -13,18 +13,32 @@ import img7 from "@/public/gallery/7.jpg";
 import img8 from "@/public/gallery/8.jpg";
 import img9 from "@/public/gallery/9.jpg";
 import img10 from "@/public/gallery/10.jpg";
-import { Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-org/react";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  useDisclosure,
+} from "@nextui-org/react";
 import ImageSwipper from "@/components/Global/Sliders/ImageSwipper";
+import { cn } from "@/libs/cn";
 
-export default function GallerySection() {
+export default function GallerySection({ isRounded }: { isRounded?: boolean }) {
   const corn = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <Center>
       <Head title="  معرض الصور" />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5   w-full">
+      <div
+        className={cn(
+          "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5   w-full",
+          isRounded && "gap-3"
+        )}
+      >
         {corn.map((img, index) => (
+          <div className={cn(
+            isRounded && "rounded-full border-4 flex justify-center items-center   border-brown-700"
+          )}>
           <Image
             onClick={onOpen}
             key={index}
@@ -32,16 +46,18 @@ export default function GallerySection() {
             alt="Quality Control"
             width={300}
             height={300}
-            className="h-[300px] cursor-pointer w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
-          />
+            className={cn(
+              "h-[300px] cursor-pointer w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]",
+              isRounded && "rounded-full border-4   border-slate-700"
+            )}
+          /></div>
         ))}
       </div>
       <Modal
-      classNames={
-        {
-          closeButton:"text-white bg-black z-10 hover:bg-black hover:text-white",
-        }
-      }
+        classNames={{
+          closeButton:
+            "text-white bg-black z-10 hover:bg-black hover:text-white",
+        }}
         backdrop="blur"
         size="md"
         placement="center"

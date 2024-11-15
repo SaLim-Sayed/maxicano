@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 import { NextUIProvider } from "@nextui-org/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ChakraProvider } from "@chakra-ui/react";
 
 export default function NextUi({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -14,11 +13,9 @@ export default function NextUi({ children }: { children: React.ReactNode }) {
 
   return (
     <NextUIProvider navigate={router.push}>
-      <ChakraProvider>
-        <QueryClientProvider client={queryClient}>
-          {children}{" "}
-        </QueryClientProvider>
-      </ChakraProvider>
+      <QueryClientProvider client={queryClient}>
+        {children}{" "}
+      </QueryClientProvider>
     </NextUIProvider>
   );
 }

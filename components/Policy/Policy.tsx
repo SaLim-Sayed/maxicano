@@ -18,7 +18,7 @@ export default function Policy({ title, image, desc }: Props) {
   return (
     <Center>
       <div className="mb-8 relative">
-        <Head title={title}  subTitle={"تأسست شركة افريكانو عام 2015 كمشروع مشترك بين مجموعة مستثمرين أجانب لهم تاريخ عريق في مجال طحن الذرة واستخراج أفضل أنواع الدقيق والسومولينا والجر"} />
+        <Head title={title}  subTitle={"تأسست شركة مكسيكانو عام 2015 كمشروع مشترك بين مجموعة مستثمرين أجانب لهم تاريخ عريق في مجال طحن الذرة واستخراج أفضل أنواع الدقيق والسومولينا والجر"} />
         <div className="flex flex-col items-end  md:flex-row gap-8 mt-4">
           <ClientHydration LoaderComponent={<Spinner />}>
             <div className="flex w-full md:w-[60%] flex-col gap-3 justify-center items-center">

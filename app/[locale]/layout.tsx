@@ -12,6 +12,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
 import { notFound } from "next/navigation";
 import "./globals.css";
+import SwipperPage from "@/components/Global/Sliders/SwipperPage";
 
  
 
@@ -48,8 +49,9 @@ export default async function RootLayout({
           <NextUi>
             <MainNavbar />
             <div className=" ">
+            <SwipperPage  />
               {children}
-              <ToTop />
+              {/* <ToTop /> */}
             </div>
             <GToast />
             <Footer />

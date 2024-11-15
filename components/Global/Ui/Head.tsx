@@ -22,7 +22,7 @@ export default function Head({
         <div className="flex  flex-col items-center text-center w-full md:w-1/2 justify-center">
           <div className="flex w-full items-center justify-center my-4">
             <div className="w-full h-[1px]  bg-gray-300"/>
-            <div className="bg-[#488102] text-white px-4 py-1 min-w-[160px]  rounded">
+            <div className="bg-[#488102] text-white px-4 py-1 min-w-[160px]  text-xl rounded">
               {title}{" "}
             </div>
             <div className="w-full  h-[1px]  bg-gray-300"/>
