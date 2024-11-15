@@ -87,7 +87,7 @@ export default function WithAction() {
   }, [locale]);
 
   return (
-    <div className="shadow-md bg-[#F7F7F7]">
+    <div className="shadow-md ">
       {/* Navbar Wrapper */}
       <div className="flex items-center justify-evenly bg-[#F7F7F7] h-24 md:h-32">
         {/* Mobile Navbar */}
