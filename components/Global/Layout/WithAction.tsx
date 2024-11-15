@@ -173,7 +173,7 @@ export default function WithAction() {
         <div className="sm:flex items-center gap-6">
           <Button
             size="lg"
-ذ            variant="flat"
+            variant="flat"
             color="success"
             className="mx-4"
             onClick={switchLang}
