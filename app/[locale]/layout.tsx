@@ -48,7 +48,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NextUi>
             <MainNavbar />
-            <div className=" ">
+            <div className="bg-white ">
             <SwipperPage  />
               {children}
               
