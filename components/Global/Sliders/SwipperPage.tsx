@@ -17,7 +17,7 @@ import { Button, Card, CardBody, Image } from "@nextui-org/react";
 const slides = [
   {
     id: 1,
-    title: "مصنع أفريكانو",
+    title: "مصنع مكسيكانو",
     description: "وهي من أهم خطوط الإنتاج الإيطالية والتركية",
     imageSrc: "/slider/banner1.jpg",
   },
