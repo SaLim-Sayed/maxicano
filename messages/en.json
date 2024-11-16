@@ -57,5 +57,24 @@
     "Corn_Grit_Desc": "Our company featuring in product of the finest corn grits of all kinds and for all using according to the best standards.",
     "Corn_Flour": "Yellow Maize / Corn Flour",
     "Corn_Flour_Desc": "Our company featuring in product of the finest corn flour of all kinds and for all using according to the best standards."
+  },
+  "Footer": {
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to our newsletter, and we will send you the latest products and events."
+    },
+    "email": {
+      "label": "Enter your email",
+      "placeholder": "Your email here"
+    },
+    "follow_us": "Follow us",
+    "contact_us": {
+      "title": "Contact us",
+      "phone": "+20 15 16 00 07 12",
+      "address": "Sector (I-G) - Land of Red Sea Copper Company – Third Sector – Economic Authority – Northwest of the Gulf of Suez – Ain Sokhna – Suez Governorate.",
+      "email": "info@africanocorn.com",
+      "website": "www.africanocorn.com"
+    },
+    "copyright": " All rights reserved by Mexicano 2021"
   }
 }

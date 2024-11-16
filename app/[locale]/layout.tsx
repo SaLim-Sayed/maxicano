@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 import Footer from "@/components/Global/Layout/Footer";
-import MainNavbar from "@/components/Global/Layout/MainNavbar";
 import GToast from "@/components/Global/Providers/GToast";
 import ToTop from "@/components/Global/Ui/ToTop";
 import NextUi from "@/components/Providers/NextUi";
@@ -13,8 +12,7 @@ import Head from "next/head";
 import { notFound } from "next/navigation";
 import "./globals.css";
 import SwipperPage from "@/components/Global/Sliders/SwipperPage";
-
- 
+import MainNavbar from "@/components/Global/Layout/MainNavbar";
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "ar" }];
@@ -44,14 +42,13 @@ export default async function RootLayout({
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body  >
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NextUi>
             <MainNavbar />
-            <div className="bg-white ">
-            <SwipperPage  />
+            <div className="bg-white mb-4 pb-8 ">
+              <SwipperPage />
               {children}
-              
             </div>
             <GToast />
             <Footer />
