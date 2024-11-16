@@ -62,10 +62,10 @@ const SwipperPage = () => {
             >
               <CardBody className="absolute z-10 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex-col g ">
                 <div className="flex flex-col   text-white justify-center items-center  ">
-                  <h4 className="px-3 bg-[#6b4e3b] font-normal  w-[80%] md:w-[40%]  text-center lg:font-extrabold text-3xl">
+                  <h4 className="px-3 bg-[#6b4e3b]/80 font-normal  w-[80%] md:w-[40%]  text-center lg:font-extrabold text-3xl">
                     {slide.title}
                   </h4>
-                  <div className="flex justify-center   bg-[#7db047] w-[80%] md:w-[40%] ">
+                  <div className="flex justify-center   bg-[#7db047]/80 w-[80%] md:w-[40%] ">
                     <div className="text-lg text-center px-3 py-1 flex">
                       {slide.description}
                     </div>

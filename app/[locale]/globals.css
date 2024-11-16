@@ -35,21 +35,34 @@ body {
   height: 5px !important;
 }
 .swiper-pagination-bullet-active {
-  background-color: #ffa458 !important;
+  background-color: #4A7F07 !important;
   width: 8px !important;
   height: 8px !important;
 }
+.swiper-button-next,
 .swiper-button-prev {
-  color: #ffa458 !important;
+  color: #4A7F07 !important;
   width: 4px !important;
   height: 4px !important;
   font-size: 4px !important;
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  z-index: 10;
+  cursor: pointer;
+  margin-top: -22px;
+  -moz-background-size: 4px 4px;
+  -webkit-background-size: 4px 44px;
+  background-size: 4px 4px;
+  display: flex;
+  align-items: center;
+   
+  
 }
-.swiper-button-next {
-  color: #ffa458 !important;
-  width: 4px !important;
-  height: 4px !important;
-}
+ 
+ 
+ 
 .swiper-pagination {
   display: flex !important;
   justify-content: center !important;

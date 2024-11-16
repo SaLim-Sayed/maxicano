@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/libs/cn";
 import { useNavigation } from "@/util/useNavigation";
 import {
   Button,
@@ -21,6 +22,7 @@ import { useEffect, useState } from "react";
 import { BiWorld } from "react-icons/bi";
 import { FaArrowDown } from "react-icons/fa";
 import { HiHome } from "react-icons/hi";
+import { IoIosArrowDown } from "react-icons/io";
 import { MdMenu } from "react-icons/md";
 
 export default function WithAction() {
@@ -62,7 +64,7 @@ export default function WithAction() {
   };
 
   return (
-    <div className="shadow-md ">
+    <div className="shadow-md  text-xl uppercase font-semibold text-[#392F89]">
       {/* Navbar Wrapper */}
       <div className="flex items-center justify-evenly bg-[#F7F7F7] h-24 md:h-32">
         {/* Mobile Navbar */}
@@ -72,12 +74,13 @@ export default function WithAction() {
               <DropdownTrigger>
                 <Button
                   disableRipple
-                  className="p-0 bg-transparent"
+                  className="p-0 hover:bg-transparent border-green-800 bg-transparent"
                   radius="sm"
-                  variant="light"
+                  variant="ghost"
+                  color="warning"
                   isIconOnly
                 >
-                  <MdMenu className="text-2xl" />
+                  <MdMenu className="text-4xl text-purple-900  uppercase font-semibold" />
                 </Button>
               </DropdownTrigger>
 
@@ -85,14 +88,12 @@ export default function WithAction() {
                 {Items.map((item, index) => (
                   <DropdownItem startContent={<HiHome />}>
                     <Link
-                      className={`w-full ${
-                        index === 2
-                          ? "text-primary"
-                          : index === Items.length - 1
-                          ? "text-danger"
-                          : "text-foreground"
-                      }`}
                       href={item.href}
+                      className={`${
+                        pathName === item.href
+                          ? "text-green-500 font-bold"
+                          : "text-purple-900"
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -116,14 +117,41 @@ export default function WithAction() {
 
         {/* Desktop Navbar Links */}
         <div className="hidden lg:flex items-center gap-6">
-          <Link href="/"> {t("home")}</Link>
-          <Link href="/about"> {t("about")}</Link>
+          <Link
+            className={cn(
+              pathName === "/" ? "text-green-700 font-bold" : "text-purple-900",
+              " uppercase"
+            )}
+            href="/"
+          >
+            {" "}
+            {t("home")}
+          </Link>
+          <Link
+            className={cn(
+              pathName === "/about"
+                ? "text-green-700 font-bold"
+                : "text-purple-900"
+            )}
+            href="/about"
+          >
+            {" "}
+            {t("about")}
+          </Link>
           <Dropdown>
-            <DropdownTrigger>
+            <DropdownTrigger
+              className={cn(
+                pathName === "/products/corn-grits" ||
+                  pathName === "/products/corn-flour"
+                  ? "text-green-700 font-bold"
+                  : "text-purple-900"
+                  ,"text-xl uppercase font-semibold"
+              )}
+            >
               <Button
                 disableRipple
                 className="p-0 bg-transparent"
-                endContent={<FaArrowDown />}
+                endContent={<IoIosArrowDown />}
                 radius="sm"
                 variant="light"
               >
@@ -131,14 +159,24 @@ export default function WithAction() {
               </Button>
             </DropdownTrigger>
 
-            <DropdownMenu aria-label="Products" className="w-[340px]">
+            <DropdownMenu aria-label="Products" className="w-[340px] text-xl uppercase font-semibold">
               <DropdownItem
+                className={cn(
+                  pathName === "/products/corn-flour"
+                    ? "text-green-700 font-bold"
+                    : "text-purple-900"
+                )}
                 onClick={() => navigateTo("/products/corn-flour")}
                 startContent={<HiHome />}
               >
                 {t("corn_flour_title")}
               </DropdownItem>
               <DropdownItem
+                className={cn(
+                  pathName === "/products/corn-grits"
+                    ? "text-green-700 font-bold"
+                    : "text-purple-900"
+                )}
                 onClick={() => navigateTo("/products/corn-grits")}
                 startContent={<HiHome />}
               >
@@ -165,17 +203,36 @@ export default function WithAction() {
 
         {/* Additional Links */}
         <div className="hidden lg:flex justify-center items-center gap-6">
-          <Link href="/corn">{t("corn")}</Link>
-          <Link href="/gallery"> {t("Gallery")}</Link>
+          <Link
+            className={cn(
+              pathName === "/corn"
+                ? "text-green-700 font-bold"
+                : "text-purple-900"
+            )}
+            href="/corn"
+          >
+            {t("corn")}
+          </Link>
+          <Link
+            className={cn(
+              pathName === "/gallery"
+                ? "text-green-700 font-bold"
+                : "text-purple-900"
+            )}
+            href="/gallery"
+          >
+            {" "}
+            {t("Gallery")}
+          </Link>
         </div>
 
         {/* Language Switcher */}
         <div className="sm:flex items-center gap-6">
           <Button
-            size="lg"
-            variant="flat"
+            size="md"
+            variant="ghost"
             color="success"
-            className="mx-4"
+            className="mx-2 max-w-24 p-2 text-[#488102] border-[#488102] "
             onClick={switchLang}
           >
             <BiWorld />
