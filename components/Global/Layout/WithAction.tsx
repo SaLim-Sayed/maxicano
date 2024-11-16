@@ -31,20 +31,23 @@ export default function WithAction() {
   const locale = useLocale();
   const pathName = usePathname();
   const t = useTranslations("Globals");
+  const normalizedPath = pathName.startsWith(`/${locale}`)
+    ? pathName.replace(`/${locale}`, "")
+    : pathName;
 
   const Items = [
-    { name: t("home"), href: "/", key: "home" },
-    { name: t("about"), href: "/about", key: "about" },
-    { name: t("corn"), href: "/corn", key: "corn" },
-    { name: t("Gallery"), href: "/gallery", key: "gallery" },
+    { name: t("home"), href: `/${locale}/`, key: "home" },
+    { name: t("about"), href: `/${locale}/about`, key: "about" },
+    { name: t("corn"), href: `/${locale}/corn`, key: "corn" },
+    { name: t("Gallery"), href: `/${locale}/gallery`, key: "gallery" },
     {
       name: t("corn_flour_title"),
-      href: "/products/corn-flour",
+      href: `/${locale}/products/corn-flour`,
       key: "corn-flour",
     },
     {
       name: t("corn_grits_title"),
-      href: "/products/corn-grits",
+      href: `/${locale}/products/corn-grits`,
       key: "corn-grits",
     },
   ];
@@ -90,8 +93,8 @@ export default function WithAction() {
                     <Link
                       href={item.href}
                       className={`${
-                        pathName === item.href
-                          ? "text-green-500 font-bold"
+                        normalizedPath === item.href.replace(`/${locale}`, "")
+                          ? "text-green-500  font-bold"
                           : "text-purple-900"
                       }`}
                     >
@@ -119,33 +122,35 @@ export default function WithAction() {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             className={cn(
-              pathName === "/" ? "text-green-700 font-bold" : "text-purple-900",
-              " uppercase"
+              normalizedPath === "" || normalizedPath === "/"
+                ? "text-green-700 font-bold"
+                : "text-purple-900",
+              "uppercase"
             )}
-            href="/"
+            href={`/${locale}/`}
           >
-            {" "}
             {t("home")}
           </Link>
+
           <Link
             className={cn(
-              pathName === "/about"
+              normalizedPath === "/about"
                 ? "text-green-700 font-bold"
                 : "text-purple-900"
             )}
-            href="/about"
+            href={`/${locale}/about`}
           >
-            {" "}
             {t("about")}
           </Link>
+
           <Dropdown>
             <DropdownTrigger
               className={cn(
-                pathName === "/products/corn-grits" ||
-                  pathName === "/products/corn-flour"
+                normalizedPath === `/products/corn-grits` ||
+                  normalizedPath === `/products/corn-flour`
                   ? "text-green-700 font-bold"
-                  : "text-purple-900"
-                  ,"text-xl uppercase font-semibold"
+                  : "text-purple-900",
+                "text-xl uppercase font-semibold"
               )}
             >
               <Button
@@ -159,25 +164,28 @@ export default function WithAction() {
               </Button>
             </DropdownTrigger>
 
-            <DropdownMenu aria-label="Products" className="w-[340px] text-xl uppercase font-semibold">
+            <DropdownMenu
+              aria-label="Products"
+              className="w-[340px] text-xl uppercase font-semibold"
+            >
               <DropdownItem
                 className={cn(
-                  pathName === "/products/corn-flour"
+                  normalizedPath === `/products/corn-flour`
                     ? "text-green-700 font-bold"
                     : "text-purple-900"
                 )}
-                onClick={() => navigateTo("/products/corn-flour")}
+                onClick={() => navigateTo(`/${locale}/products/corn-flour`)}
                 startContent={<HiHome />}
               >
                 {t("corn_flour_title")}
               </DropdownItem>
               <DropdownItem
                 className={cn(
-                  pathName === "/products/corn-grits"
+                  normalizedPath === `/products/corn-grits`
                     ? "text-green-700 font-bold"
                     : "text-purple-900"
                 )}
-                onClick={() => navigateTo("/products/corn-grits")}
+                onClick={() => navigateTo(`/${locale}/products/corn-grits`)}
                 startContent={<HiHome />}
               >
                 {t("corn_grits_title")}
@@ -205,21 +213,21 @@ export default function WithAction() {
         <div className="hidden lg:flex justify-center items-center gap-6">
           <Link
             className={cn(
-              pathName === "/corn"
+              normalizedPath === "/corn"
                 ? "text-green-700 font-bold"
                 : "text-purple-900"
             )}
-            href="/corn"
+            href={`/${locale}/corn`}
           >
             {t("corn")}
           </Link>
           <Link
             className={cn(
-              pathName === "/gallery"
+              normalizedPath === "/gallery"
                 ? "text-green-700 font-bold"
                 : "text-purple-900"
             )}
-            href="/gallery"
+            href={`/${locale}/gallery`}
           >
             {" "}
             {t("Gallery")}
@@ -229,10 +237,10 @@ export default function WithAction() {
         {/* Language Switcher */}
         <div className="sm:flex items-center gap-6">
           <Button
+            id="lang"
             size="md"
-            variant="ghost"
-            color="success"
-            className="mx-2 max-w-24 p-2 text-[#488102] border-[#488102] "
+            variant="bordered"
+            className="mx-2 max-w-24 p-2 text-[#488102]  border-[#488102] "
             onClick={switchLang}
           >
             <BiWorld />
