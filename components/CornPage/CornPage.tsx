@@ -1,8 +1,7 @@
-import React from "react";
-import Center from "../Global/Ui/Center";
 import { useTranslations } from "next-intl";
-import Head from "../Global/Ui/Head";
 import Image from "next/legacy/image";
+import Center from "../Global/Ui/Center";
+import Head from "../Global/Ui/Head";
 
 import img1 from "@/public/corn/1.jpg";
 import img2 from "@/public/corn/2.jpg";
@@ -11,14 +10,14 @@ import img4 from "@/public/corn/4.jpg";
 import img5 from "@/public/corn/5.jpg";
 import img6 from "@/public/corn/6.jpg";
 
+import ImageSwiper from "@/components/Global/Sliders/ImageSwiper";
+import { cn } from "@/libs/cn";
 import {
   Modal,
   ModalBody,
   ModalContent,
   useDisclosure,
 } from "@nextui-org/react";
-import ImageSwipper from "@/components/Global/Sliders/ImageSwipper";
-import { cn } from "@/libs/cn";
 export default function CornPage() {
   const t = useTranslations();
   const corn = [img1, img2, img3, img4, img5, img6];
@@ -80,7 +79,7 @@ export default function CornPage() {
             {(onClose) => (
               <>
                 <ModalBody className="h-full  ">
-                  <ImageSwipper images={corn as any[]} />
+                  <ImageSwiper images={corn as any[]} />
                 </ModalBody>
               </>
             )}

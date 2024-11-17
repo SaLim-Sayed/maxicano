@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/legacy/image";
 
+import ImageSwiper from "@/components/Global/Sliders/ImageSwiper";
 import Center from "@/components/Global/Ui/Center";
 import Head from "@/components/Global/Ui/Head";
+import { cn } from "@/libs/cn";
 import img1 from "@/public/gallery/1.jpg";
+import img10 from "@/public/gallery/10.jpg";
 import img2 from "@/public/gallery/2.jpg";
 import img3 from "@/public/gallery/3.jpg";
 import img4 from "@/public/gallery/4.jpg";
@@ -12,15 +15,12 @@ import img6 from "@/public/gallery/6.jpg";
 import img7 from "@/public/gallery/7.jpg";
 import img8 from "@/public/gallery/8.jpg";
 import img9 from "@/public/gallery/9.jpg";
-import img10 from "@/public/gallery/10.jpg";
 import {
   Modal,
   ModalBody,
   ModalContent,
   useDisclosure,
 } from "@nextui-org/react";
-import ImageSwipper from "@/components/Global/Sliders/ImageSwipper";
-import { cn } from "@/libs/cn";
 import { useTranslations } from "next-intl";
 
 export default function GallerySection({ isRounded }: { isRounded?: boolean }) {
@@ -71,7 +71,7 @@ export default function GallerySection({ isRounded }: { isRounded?: boolean }) {
           {(onClose) => (
             <>
               <ModalBody className="h-full  ">
-                <ImageSwipper images={corn as any[]} />
+                <ImageSwiper images={corn as any[]} />
               </ModalBody>
             </>
           )}

@@ -1,6 +1,6 @@
 "use server";
 
-import SwipperPage from "../Global/Sliders/SwipperPage";
+import SwiperPage from "../Global/Sliders/SwiperPage";
 
 import AboutSection from "./AboutSection/AboutSection";
 import ClientsSection from "./ClientsSection/ClientsSection";

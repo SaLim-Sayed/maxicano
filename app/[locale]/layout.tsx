@@ -11,7 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Head from "next/head";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import SwipperPage from "@/components/Global/Sliders/SwipperPage";
+import SwiperPage from "@/components/Global/Sliders/SwiperPage";
 import MainNavbar from "@/components/Global/Layout/MainNavbar";
 
 export function generateStaticParams() {
@@ -47,7 +47,7 @@ export default async function RootLayout({
           <NextUi>
             <MainNavbar />
             <div className="bg-white mb-4 pb-8 ">
-              <SwipperPage />
+              <SwiperPage />
               {children}
             </div>
             <GToast />

@@ -16,7 +16,7 @@ import { useTranslations } from "next-intl";
 
 // Slide data array
 
-const SwipperPage = () => {
+const SwiperPage = () => {
   const t = useTranslations("Sliders");
   const slides = [
     {
@@ -88,4 +88,4 @@ const SwipperPage = () => {
   );
 };
 
-export default SwipperPage;
+export default SwiperPage;

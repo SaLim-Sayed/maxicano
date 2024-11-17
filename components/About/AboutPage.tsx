@@ -13,7 +13,7 @@ interface Props {
   image: any;
   desc?: any;
 }
-export default function Policy({ title, image, desc }: Props) {
+export default function AboutPage({ title, image, desc }: Props) {
   const t = useTranslations("About");
   return (
     <Center>

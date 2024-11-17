@@ -24,7 +24,7 @@ import "swiper/css/scrollbar";
 interface IProps {
   images: string[] | undefined;
 }
-const ImageSwipper = ({ images }: IProps) => {
+const ImageSwiper = ({ images }: IProps) => {
   return (
     <>
       <div className="   cursor-pointer ">
@@ -77,4 +77,4 @@ const ImageSwipper = ({ images }: IProps) => {
   );
 };
 
-export default ImageSwipper;
+export default ImageSwiper;

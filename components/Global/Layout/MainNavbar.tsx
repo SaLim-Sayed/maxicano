@@ -110,7 +110,7 @@ export default function MainNavbar() {
                 size="lg"
                 className="min-w-[150px] h-[40px] md:min-w-[200px] flex gap-2"
               >
-                <Link href="/" className="font-bold text-xl text-[#00b5bc]">
+                <Link  href={`/${locale}/`} className="font-bold text-xl text-[#00b5bc]">
                   <Image src="/logo1.png" alt="logo" layout="fill" />
                 </Link>
               </Button>
@@ -203,7 +203,7 @@ export default function MainNavbar() {
             color="default"
             className="min-w-[160px] h-[100px] bg-white md:min-w-[300px]"
           >
-            <Link href="/" className="font-bold text-xl text-[#00b5bc]">
+            <Link  href={`/${locale}/`} className="font-bold text-xl text-[#00b5bc]">
               <Image src="/logo1.png" alt="logo" layout="fill" />
             </Link>
           </Button>
