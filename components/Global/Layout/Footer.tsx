@@ -52,7 +52,6 @@ export default function Footer() {
                 classNames={{
                   input: "text-[1.2rem]",
                 }}
-                
                 placeholder={t("email.placeholder")}
                 className="w-full border-r-0 rounded-r-none"
               />
@@ -97,8 +96,8 @@ export default function Footer() {
             <h2 className="text-lg font-bold"> {t("contact_us.title")} </h2>
             <div className="flex items-center gap-2 space-x-2">
               <HiPhone size={20} />
-              <Link target="_blank" href="https://wa.me/+201516000712">
-                +20 15 16 00 07 12
+              <Link target="_blank" href="https://wa.me/*******">
+                service not available
               </Link>
             </div>
 
@@ -106,20 +105,20 @@ export default function Footer() {
               <MdEmail size={20} />
               <Link
                 target="_blank"
-                href="mailto:info@africanocorn.com"
+                href="mailto:info@maxicano.com"
                 className="hover:underline"
               >
-                info@africanocorn.com
+                info@maxicano.com
               </Link>
             </div>
             <div className="flex items-center space-x-2 gap-2">
               <MdEmail size={20} />
               <Link
                 target="_blank"
-                href="http://www.africanocorn.com"
+                href="http://www.maxicano.com"
                 className="hover:underline"
               >
-                www.africanocorn.com
+                www.maxicano.com
               </Link>
             </div>
           </div>
