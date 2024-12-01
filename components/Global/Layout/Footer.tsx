@@ -96,8 +96,8 @@ export default function Footer() {
             <h2 className="text-lg font-bold"> {t("contact_us.title")} </h2>
             <div className="flex items-center gap-2 space-x-2">
               <HiPhone size={20} />
-              <Link target="_blank" href="https://wa.me/*******">
-                service not available
+              <Link target="_blank" href="https://wa.me/+201096348733">
+              +20 109 634 8733
               </Link>
             </div>
 
@@ -105,20 +105,20 @@ export default function Footer() {
               <MdEmail size={20} />
               <Link
                 target="_blank"
-                href="mailto:info@maxicano.com"
+                href="mailto:admin@maxicano.com"
                 className="hover:underline"
               >
-                info@maxicano.com
+                admin@maxicano.com
               </Link>
             </div>
             <div className="flex items-center space-x-2 gap-2">
               <MdEmail size={20} />
               <Link
                 target="_blank"
-                href="http://www.maxicano.com"
+                 href="mailto:sales@maxicano.com"
                 className="hover:underline"
               >
-                www.maxicano.com
+                sales@maxicano.com
               </Link>
             </div>
           </div>
